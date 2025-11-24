@@ -422,7 +422,7 @@
 
         function updateStats() {
             const totalInteractions = filteredData.length;
-            const uniqueUsers = new Set(filteredData.map(r => r.user_id_that_interacted)).size;
+            const uniqueUsers = new Set(filteredData.map(r => r.user_advertiser_id)).size;
             const impressions = filteredData.filter(r => r.interaction_type === 'impression').length;
             const engagements = totalInteractions - impressions;
             const engagementRate = impressions > 0 ? ((engagements / impressions) * 100).toFixed(2) : 0;
@@ -650,7 +650,7 @@
                 } else {
                     grouped[key].engagements++;
                 }
-                grouped[key].users.add(row.user_id_that_interacted);
+                grouped[key].users.add(row.user_advertiser_id);
             });
 
             // Create table rows
