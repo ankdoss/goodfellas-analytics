@@ -325,7 +325,7 @@
                 // First try the CDN URL
                 let response;
                 try {
-                    response = await fetch('https://storage.googleapis.com/ankdos/ad_metric_events_2025-08-01.csv');
+                    response = await fetch('https://storage.googleapis.com/ankdos/ad_metric_events_2025-11-24.csv');
                     if (!response.ok) throw new Error('CDN not accessible');
                 } catch (e) {
                     // If CDN fails, try to read the uploaded file
